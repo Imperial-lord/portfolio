@@ -1,0 +1,18 @@
+[
+  {
+    "family": "avenir",
+    "fonts": [
+      {
+        "asset": "assets/fonts/avenir-light.otf"
+      }
+    ]
+  },
+  {
+    "family": "poppins",
+    "fonts": [
+      {
+        "asset": "assets/fonts/poppins-semibold.ttf"
+      }
+    ]
+  }
+]

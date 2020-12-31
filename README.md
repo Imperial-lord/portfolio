@@ -1,11 +1,16 @@
-# Portfolio
-This repository contains code to my realm hosted at ...
+# portfolio
 
-## 🙋‍♂️Who am I?
-I'm AB Satyaprakash - Software Developer, Competitive Programmer and a pre-final yearite at Mathematics and Computing, IIT Guwahati. I love being creative and passionate about the code I write.
+A new Flutter project.
 
-## 💻What did I build this with?
-The website is made with [Flutter-Web](https://flutter.dev/web), and it is hosted on [GitHub Pages](https://pages.github.com/).
+## Getting Started
 
-## 📜License
-This project is licensed under the MIT License - a short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.
+This project is a starting point for a Flutter application.
+
+A few resources to get you started if this is your first Flutter project:
+
+- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+
+For help getting started with Flutter, view our
+[online documentation](https://flutter.dev/docs), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.
