@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/functions/responsiveHelper.dart';
 import 'package:portfolio/globals/myColors.dart';
-import 'package:portfolio/pages/resume.dart';
 import 'package:portfolio/widgets/desktop/footerDesktop.dart';
 import 'package:portfolio/widgets/desktop/navBarDesktop.dart';
 import 'package:portfolio/widgets/mobile/footerMobile.dart';
@@ -9,13 +8,13 @@ import 'package:portfolio/widgets/mobile/navBarMobile.dart';
 import 'package:portfolio/widgets/tablet/footerTablet.dart';
 import 'package:portfolio/widgets/tablet/navBarTablet.dart';
 
-class AboutMe extends StatefulWidget {
-  static const String route = "/about";
+class Resume extends StatefulWidget {
+  static const String route = "/resume";
 
-  _AboutMeState createState() => _AboutMeState();
+  _ResumeState createState() => _ResumeState();
 }
 
-class _AboutMeState extends State<AboutMe> {
+class _ResumeState extends State<Resume> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,14 +27,14 @@ class _AboutMeState extends State<AboutMe> {
               children: [
                 /// This is the nav bar -- make separate widgets for desktop, tablet and phone.
                 if (responsiveHelper(context) == "Desktop")
-                  NavBarDesktop(currentScreen: 0,)
+                  NavBarDesktop(currentScreen: 1,)
                 else if (responsiveHelper(context) == "Tablet")
                   NavBarTablet()
                 else
                   NavBarMobile(),
                 Container(
                   color: MyColors.primaryDark,
-                  width: 0.4 * MediaQuery.of(context).size.width,
+                  width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height,
                 ),
                 if (responsiveHelper(context) == "Desktop")
