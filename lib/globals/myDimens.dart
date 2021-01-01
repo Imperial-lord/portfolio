@@ -20,6 +20,7 @@ class MyDimens {
   static const double double_15 = 15;
   static const double double_16 = 16;
   static const double double_17 = 17;
+  static const double double_18 = 18;
   static const double double_20 = 20;
   static const double double_25 = 25;
   static const double double_30 = 30;

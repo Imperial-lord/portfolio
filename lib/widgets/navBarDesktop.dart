@@ -42,7 +42,7 @@ class _NavBarDesktopState extends State<NavBarDesktop> {
                         color: MyColors.black,
                         letterSpacing: 0.5,
                         fontFamily: 'avenir',
-                        fontSize: MyDimens.double_17),
+                        fontSize: MyDimens.double_18),
                   ),
                   MySpaces.hSmallestGapInBetween,
                   Text(
@@ -51,7 +51,7 @@ class _NavBarDesktopState extends State<NavBarDesktop> {
                         letterSpacing: 0.5,
                         color: MyColors.black,
                         fontFamily: 'avenir',
-                        fontSize: MyDimens.double_17),
+                        fontSize: MyDimens.double_18),
                   ),
                 ],
               ),
@@ -62,14 +62,14 @@ class _NavBarDesktopState extends State<NavBarDesktop> {
                 padding: const EdgeInsets.only(
                     left: MyDimens.double_15,
                     right: MyDimens.double_15,
-                    top: MyDimens.double_7),
+                    top: MyDimens.double_10),
                 child: Text(
                   MyStrings.navList[i].toUpperCase(),
                   style: TextStyle(
                       letterSpacing: 0.5,
                       color: MyColors.black,
                       fontFamily: 'avenir',
-                      fontSize: MyDimens.double_14),
+                      fontSize: MyDimens.double_15),
                 ),
               ),
           ],
