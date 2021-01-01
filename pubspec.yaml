@@ -78,10 +78,12 @@ flutter:
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
   fonts:
-    - family: avenir
+    - family: avenir-light
       fonts:
         - asset: assets/fonts/avenir-light.otf
-
+    - family: avenir-regular
+      fonts:
+        - asset: assets/fonts/avenir-regular.ttf
     - family: poppins
       fonts:
         - asset: assets/fonts/poppins-semibold.ttf

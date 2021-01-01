@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/functions/responsiveHelper.dart';
 import 'package:portfolio/globals/myColors.dart';
-import 'package:portfolio/widgets/navBarDesktop.dart';
-import 'package:portfolio/widgets/navBarMobile.dart';
-import 'package:portfolio/widgets/navBarTablet.dart';
+import 'package:portfolio/widgets/desktop/footerDesktop.dart';
+import 'package:portfolio/widgets/desktop/navBarDesktop.dart';
+import 'package:portfolio/widgets/mobile/footerMobile.dart';
+import 'package:portfolio/widgets/mobile/navBarMobile.dart';
+import 'package:portfolio/widgets/tablet/footerTablet.dart';
+import 'package:portfolio/widgets/tablet/navBarTablet.dart';
 
 class AboutMe extends StatefulWidget {
   static String id = "about_me";
@@ -33,6 +36,12 @@ class _AboutMeState extends State<AboutMe> {
                   width: 0.4 * MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height,
                 ),
+                if (responsiveHelper(context) == "Desktop")
+                  FooterDesktop()
+                else if (responsiveHelper(context) == "Tablet")
+                  FooterTablet()
+                else
+                  FooterMobile(),
               ],
             ),
           ),

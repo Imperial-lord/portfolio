@@ -46,7 +46,7 @@ class _NavBarTabletState extends State<NavBarTablet> {
                   style: TextStyle(
                       letterSpacing: 0.5,
                       color: MyColors.black,
-                      fontFamily: 'avenir',
+                      fontFamily: 'avenir-light',
                       fontSize: MyDimens.double_17),
                 ),
               ],

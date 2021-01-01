@@ -41,7 +41,7 @@ class _NavBarDesktopState extends State<NavBarDesktop> {
                     style: TextStyle(
                         color: MyColors.black,
                         letterSpacing: 0.5,
-                        fontFamily: 'avenir',
+                        fontFamily: 'avenir-light',
                         fontSize: MyDimens.double_18),
                   ),
                   MySpaces.hSmallestGapInBetween,
@@ -50,7 +50,7 @@ class _NavBarDesktopState extends State<NavBarDesktop> {
                     style: TextStyle(
                         letterSpacing: 0.5,
                         color: MyColors.black,
-                        fontFamily: 'avenir',
+                        fontFamily: 'avenir-light',
                         fontSize: MyDimens.double_18),
                   ),
                 ],
@@ -68,7 +68,7 @@ class _NavBarDesktopState extends State<NavBarDesktop> {
                   style: TextStyle(
                       letterSpacing: 0.5,
                       color: MyColors.black,
-                      fontFamily: 'avenir',
+                      fontFamily: 'avenir-light',
                       fontSize: MyDimens.double_15),
                 ),
               ),

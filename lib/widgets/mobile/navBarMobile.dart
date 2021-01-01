@@ -47,7 +47,7 @@ class _NavBarMobileState extends State<NavBarMobile> {
                   style: TextStyle(
                       letterSpacing: 0.5,
                       color: MyColors.black,
-                      fontFamily: 'avenir',
+                      fontFamily: 'avenir-light',
                       fontSize: MyDimens.double_15),
                 ),
               ],
