@@ -5,7 +5,7 @@ class HighlightOnHover extends StatefulWidget {
   final Widget child;
 
   // You can also pass the translation in here if you want to
-  HighlightOnHover({Key key, this.child}) : super(key: key);
+  HighlightOnHover({required this.child});
 
   @override
   _HighlightOnHoverState createState() => _HighlightOnHoverState();

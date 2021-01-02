@@ -13,7 +13,7 @@ import 'package:portfolio/extensions/hoverExtensions.dart';
 class NavBarDesktop extends StatefulWidget {
   final int currentScreen;
 
-  NavBarDesktop({Key key, @required this.currentScreen}) : super(key: key);
+  NavBarDesktop({required this.currentScreen});
 
   _NavBarDesktopState createState() => _NavBarDesktopState(currentScreen);
 }

@@ -1,10 +1,11 @@
-import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/functions/yearFinder.dart';
 import 'package:portfolio/globals/myColors.dart';
 import 'package:portfolio/globals/myDimens.dart';
 import 'package:portfolio/globals/mySpaces.dart';
 import 'package:portfolio/globals/myString.dart';
+
+import '../portfolio_icons.dart';
 
 class FooterMobile extends StatefulWidget {
   _FooterMobileState createState() => _FooterMobileState();
@@ -89,22 +90,22 @@ class _FooterMobileState extends State<FooterMobile> {
                 Row(
                   children: [
                     Icon(
-                      EvaIcons.facebook,
+                      PortfolioIcons.facebook_f,
                       size: MyDimens.double_20,
                     ),
                     MySpaces.hGapInBetween,
                     Icon(
-                      EvaIcons.twitter,
+                      PortfolioIcons.twitter,
                       size: MyDimens.double_20,
                     ),
                     MySpaces.hGapInBetween,
                     Icon(
-                      EvaIcons.linkedin,
+                      PortfolioIcons.linkedin_in,
                       size: MyDimens.double_20,
                     ),
                     MySpaces.hGapInBetween,
                     Icon(
-                      EvaIcons.github,
+                      PortfolioIcons.github,
                       size: MyDimens.double_20,
                     ),
                   ],

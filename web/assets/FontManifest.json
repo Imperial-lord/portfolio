@@ -1,5 +1,13 @@
 [
   {
+    "family": "PortfolioIcons",
+    "fonts": [
+      {
+        "asset": "assets/fonts/PortfolioIcons.ttf"
+      }
+    ]
+  },
+  {
     "family": "avenir-light",
     "fonts": [
       {

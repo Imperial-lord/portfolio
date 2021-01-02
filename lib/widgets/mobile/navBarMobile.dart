@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:portfolio/globals/myColors.dart';
 import 'package:portfolio/globals/myDimens.dart';
 import 'package:portfolio/globals/mySpaces.dart';
 import 'package:portfolio/globals/myString.dart';
+import 'package:portfolio/widgets/portfolio_icons.dart';
 
 class NavBarMobile extends StatefulWidget {
   _NavBarMobileState createState() => _NavBarMobileState();
@@ -53,7 +53,7 @@ class _NavBarMobileState extends State<NavBarMobile> {
               ],
             ),
             Spacer(),
-            Icon(EvaIcons.menu, color: MyColors.accentColor, size: MyDimens.double_40,),
+            Icon(PortfolioIcons.bars, color: MyColors.accentColor, size: MyDimens.double_40,),
           ],
         ),
       ),
