@@ -7,8 +7,10 @@ import 'package:portfolio/globals/mySpaces.dart';
 import 'package:portfolio/pages/resume.dart';
 import 'package:portfolio/widgets/desktop/aboutCardDesktop.dart';
 import 'package:portfolio/widgets/desktop/aboutDescDesktop.dart';
+import 'package:portfolio/widgets/desktop/aboutMeBodyDesktop.dart';
 import 'package:portfolio/widgets/desktop/footerDesktop.dart';
 import 'package:portfolio/widgets/desktop/navBarDesktop.dart';
+import 'package:portfolio/widgets/mobile/aboutMeBodyMobileTab.dart';
 import 'package:portfolio/widgets/mobile/footerMobile.dart';
 import 'package:portfolio/widgets/mobile/navBarMobile.dart';
 import 'package:portfolio/widgets/tablet/footerTablet.dart';
@@ -36,43 +38,8 @@ class _AboutMeState extends State<AboutMe> {
                       color: MyColors.white,
                       height: MyDimens.double_125,
                     ),
-                    Stack(
-                      children: [
-                        Row(
-                          children: [
-                            Container(
-                              color: MyColors.primaryDark,
-                              width: 0.4 * MediaQuery.of(context).size.width,
-                              height: MediaQuery.of(context).size.height,
-                            ),
-                            Container(
-                              color: MyColors.white,
-                              width: 0.6 * MediaQuery.of(context).size.width,
-                              height: MediaQuery.of(context).size.height,
-                            ),
-                          ],
-                        ),
-                        Container(
-                          height: MediaQuery.of(context).size.height,
-                          child: Column(
-                            children: [
-                              Spacer(),
-                              Row(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  Spacer(),
-                                  AboutCardDesktop(),
-                                  MySpaces.hMediumGapInBetween,
-                                  AboutDescDesktop(),
-                                  Spacer(),
-                                ],
-                              ),
-                              Spacer(),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
+                    if(responsiveHelper(context)=="Desktop") AboutMeBodyDesktop()
+                    else AboutMeBodyMobileTab(),
                     if (responsiveHelper(context) == "Desktop")
                       FooterDesktop()
                     else if (responsiveHelper(context) == "Tablet")

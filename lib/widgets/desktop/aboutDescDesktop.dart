@@ -56,7 +56,7 @@ class _AboutDescDesktopState extends State<AboutDescDesktop> {
                 ),
                 child: Padding(
                   padding: EdgeInsets.symmetric(
-                      horizontal: MyDimens.double_50, vertical: MyDimens.double_10),
+                      horizontal: MyDimens.double_30, vertical: MyDimens.double_10),
                   child: Text(
                     'RESUME',
                     style: TextStyle(
@@ -81,7 +81,7 @@ class _AboutDescDesktopState extends State<AboutDescDesktop> {
                 ),
                 child: Padding(
                   padding: EdgeInsets.symmetric(
-                      horizontal: MyDimens.double_40, vertical: MyDimens.double_10),
+                      horizontal: MyDimens.double_30, vertical: MyDimens.double_10),
                   child: Text(
                     'PROJECTS',
                     style: TextStyle(
