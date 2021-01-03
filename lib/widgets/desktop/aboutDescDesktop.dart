@@ -6,6 +6,7 @@ import 'package:portfolio/globals/myDimens.dart';
 import 'package:portfolio/globals/mySpaces.dart';
 import 'package:portfolio/globals/myString.dart';
 import 'package:portfolio/widgets/portfolio_icons.dart';
+import 'package:portfolio/extensions/hoverExtensions.dart';
 
 class AboutDescDesktop extends StatefulWidget {
   _AboutDescDesktopState createState() => _AboutDescDesktopState();
@@ -47,48 +48,50 @@ class _AboutDescDesktopState extends State<AboutDescDesktop> {
                 onPressed: () {},
                 color: MyColors.accentColor,
                 hoverColor: MyColors.white,
-                padding: EdgeInsets.symmetric(
-                    horizontal: MyDimens.double_50, vertical: MyDimens.double_17),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(MyDimens.double_20),
                   side: BorderSide(
                     color: MyColors.accentColor,
                   ),
                 ),
-                child: Text(
-                  'RESUME',
-                  style: TextStyle(
-                    color: MyColors.white,
-                    fontFamily: 'avenir-regular',
-                    fontSize: 15,
-                    letterSpacing: 0.5,
-                    fontWeight: FontWeight.w600,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(
+                      horizontal: MyDimens.double_50, vertical: MyDimens.double_10),
+                  child: Text(
+                    'RESUME',
+                    style: TextStyle(
+                      fontFamily: 'avenir-regular',
+                      fontSize: 15,
+                      letterSpacing: 0.5,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
-                ),
+                ).aboutButton1,
               ),
               MySpaces.hGapInBetween,
               FlatButton(
                 onPressed: () {},
                 color: MyColors.white,
                 hoverColor: MyColors.accentColor,
-                padding: EdgeInsets.symmetric(
-                    horizontal: MyDimens.double_40, vertical: MyDimens.double_17),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(MyDimens.double_20),
                   side: BorderSide(
-                    color: MyColors.black,
+                    color: MyColors.accentColor,
                   ),
                 ),
-                child: Text(
-                  'PROJECTS',
-                  style: TextStyle(
-                    color: MyColors.black,
-                    fontFamily: 'avenir-regular',
-                    fontSize: 15,
-                    letterSpacing: 0.5,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
+                child: Padding(
+                  padding: EdgeInsets.symmetric(
+                      horizontal: MyDimens.double_40, vertical: MyDimens.double_10),
+                  child: Text(
+                    'PROJECTS',
+                    style: TextStyle(
+                      fontFamily: 'avenir-regular',
+                      fontSize: 15,
+                      letterSpacing: 0.5,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  )
+                ).aboutButton2,
               ),
             ],
           ),

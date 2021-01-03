@@ -3,17 +3,21 @@ import 'package:portfolio/globals/myColors.dart';
 
 class HighlightOnHover extends StatefulWidget {
   final Widget child;
+  final Color normal;
+  final Color highlighted;
 
   // You can also pass the translation in here if you want to
-  HighlightOnHover({required this.child});
+  HighlightOnHover({required this.child, required this.normal, required this.highlighted});
 
   @override
-  _HighlightOnHoverState createState() => _HighlightOnHoverState();
+  _HighlightOnHoverState createState() => _HighlightOnHoverState(normal: normal, highlighted: highlighted);
 }
 
 class _HighlightOnHoverState extends State<HighlightOnHover> {
-  final Color normal = MyColors.black;
-  final Color highlighted = MyColors.accentColor;
+  final Color normal;
+  final Color highlighted;
+
+  _HighlightOnHoverState({required this.normal, required this.highlighted});
 
   bool _hovering = false;
 
