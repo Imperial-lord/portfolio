@@ -38,7 +38,7 @@ class _AboutCardDesktopState extends State<AboutCardDesktop> {
               children: [
                 ClipOval(
                     child: Image(
-                  image: AssetImage('images/shin.jpg'),
+                  image: NetworkImage('https://i.ibb.co/9GfRf96/shin.jpg'),
                   height: 205,
                   width: 205,
                 )),
