@@ -7,11 +7,11 @@ import 'package:portfolio/globals/mySpaces.dart';
 import 'package:portfolio/globals/myString.dart';
 import 'package:portfolio/widgets/portfolio_icons.dart';
 
-class ResumeCardDesktop extends StatefulWidget {
-  _ResumeCardDesktopState createState() => _ResumeCardDesktopState();
+class ResumeCardMobile extends StatefulWidget {
+  _ResumeCardMobileState createState() => _ResumeCardMobileState();
 }
 
-class _ResumeCardDesktopState extends State<ResumeCardDesktop> {
+class _ResumeCardMobileState extends State<ResumeCardMobile> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -30,24 +30,23 @@ class _ResumeCardDesktopState extends State<ResumeCardDesktop> {
         ],
       ),
       padding: EdgeInsets.symmetric(
-          horizontal: MyDimens.double_50, vertical: MyDimens.double_70),
+          horizontal: MyDimens.double_20, vertical: MyDimens.double_40),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            '2019 - Present',
-            style: TextStyle(
-                color: MyColors.accentColor,
-                fontFamily: 'poppins-bold',
-                fontSize: MyDimens.double_20),
-          ),
-          MySpaces.vGapInBetween,
           Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  Text(
+                    '2019 - Present',
+                    style: TextStyle(
+                        color: MyColors.accentColor,
+                        fontFamily: 'poppins-bold',
+                        fontSize: MyDimens.double_18),
+                  ),
+                  MySpaces.vGapInBetween,
                   Text(
                     'JOB POSITION',
                     style: TextStyle(
@@ -74,27 +73,26 @@ class _ResumeCardDesktopState extends State<ResumeCardDesktop> {
                       fontSize: MyDimens.double_14,
                     ),
                   ),
-                  Image(
-                    image: NetworkImage('https://i.ibb.co/M1FZCPL/mlh.png'),
-                    fit: BoxFit.contain,
-                    height: 150,
-                    width: 150,
-                  ),
                 ],
               ),
-              for (int i = 0; i < 3; i++) MySpaces.hLargeGapInBetween,
-              Flexible(
-                child: Text(
-                  MyStrings.tempDescResume,
-                  style: TextStyle(
-                    height: 1.5,
-                    color: MyColors.black,
-                    fontFamily: 'avenir-light',
-                    fontSize: MyDimens.double_17,
-                  ),
-                ),
+              Spacer(),
+              Image(
+                image: NetworkImage('https://i.ibb.co/M1FZCPL/mlh.png'),
+                fit: BoxFit.contain,
+                height: 100,
+                width: 100,
               ),
             ],
+          ),
+          MySpaces.vLargeGapInBetween,
+          Text(
+            MyStrings.tempDescResume,
+            style: TextStyle(
+              height: 1.5,
+              color: MyColors.black,
+              fontFamily: 'avenir-light',
+              fontSize: MyDimens.double_17,
+            ),
           ),
         ],
       ),
@@ -102,7 +100,7 @@ class _ResumeCardDesktopState extends State<ResumeCardDesktop> {
   }
 }
 
-class ResumeCardSkillsDesktop extends StatelessWidget {
+class ResumeCardSkillsMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -122,7 +120,7 @@ class ResumeCardSkillsDesktop extends StatelessWidget {
         ],
       ),
       padding: EdgeInsets.symmetric(
-          horizontal: MyDimens.double_50, vertical: MyDimens.double_60),
+          horizontal: MyDimens.double_20, vertical: MyDimens.double_40),
       child: Column(
         children: [
           Column(
@@ -135,23 +133,14 @@ class ResumeCardSkillsDesktop extends StatelessWidget {
                     fontFamily: 'poppins-bold',
                     fontSize: MyDimens.double_25),
               ),
-              MySpaces.vLargeGapInBetween,
-              Row(
-                children: [
-                  _getBulletPoint('Entrepreneurial Mindset'),
-                  MySpaces.hLargeGapInBetween,
-                  _getBulletPoint('Go-to-Market Planning'),
-                ],
-              ),
-              MySpaces.vLargeGapInBetween,
-              Row(
-                children: [
-                  _getBulletPoint('Teamwork & Collaboration'),
-                  MySpaces.hLargeGapInBetween,
-                  _getBulletPoint('Digital Analytics'),
-                ],
-              ),
-              MySpaces.vLargeGapInBetween,
+              MySpaces.vGapInBetween,
+              _getBulletPoint('Entrepreneurial Mindset'),
+              MySpaces.vGapInBetween,
+              _getBulletPoint('Go-to-Market Planning'),
+              MySpaces.vGapInBetween,
+              _getBulletPoint('Teamwork & Collaboration'),
+              MySpaces.vGapInBetween,
+              _getBulletPoint('Digital Analytics'),
             ],
           ),
           MySpaces.vLargeGapInBetween,
@@ -165,22 +154,14 @@ class ResumeCardSkillsDesktop extends StatelessWidget {
                     fontFamily: 'poppins-bold',
                     fontSize: MyDimens.double_25),
               ),
-              MySpaces.vLargeGapInBetween,
-              Row(
-                children: [
-                  _getBulletPoint('English'),
-                  MySpaces.hLargeGapInBetween,
-                  _getBulletPoint('Hindi'),
-                ],
-              ),
-              MySpaces.vLargeGapInBetween,
-              Row(
-                children: [
-                  _getBulletPoint('Odia'),
-                  MySpaces.hLargeGapInBetween,
-                  _getBulletPoint('Japanese'),
-                ],
-              ),
+              MySpaces.vGapInBetween,
+              _getBulletPoint('English'),
+              MySpaces.vGapInBetween,
+              _getBulletPoint('Hindi'),
+              MySpaces.vGapInBetween,
+              _getBulletPoint('Odia'),
+              MySpaces.vGapInBetween,
+              _getBulletPoint('Japanese'),
             ],
           ),
         ],
@@ -203,7 +184,7 @@ class ResumeCardSkillsDesktop extends StatelessWidget {
           style: TextStyle(
               color: MyColors.black,
               fontFamily: 'avenir-light',
-              fontSize: MyDimens.double_16),
+              fontSize: MyDimens.double_15),
         ),
       ],
     );

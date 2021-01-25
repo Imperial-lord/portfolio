@@ -7,6 +7,7 @@ import 'package:portfolio/widgets/desktop/navBarDesktop.dart';
 import 'package:portfolio/widgets/desktop/resumeBodyDesktop.dart';
 import 'package:portfolio/widgets/mobile/footerMobile.dart';
 import 'package:portfolio/widgets/mobile/navBarMobile.dart';
+import 'package:portfolio/widgets/mobile/resumeBodyMobile.dart';
 import 'package:portfolio/widgets/tablet/footerTablet.dart';
 import 'package:portfolio/widgets/tablet/navBarTablet.dart';
 
@@ -40,7 +41,9 @@ class _ResumeState extends State<Resume> {
                   padding: EdgeInsets.symmetric(vertical: MyDimens.double_60),
                   color: MyColors.primaryDark,
                   width: MediaQuery.of(context).size.width,
-                  child:  ResumeBodyDesktop(),
+                  child: (responsiveHelper(context)) == "Mobile"
+                      ? ResumeBodyMobile()
+                      : ResumeBodyDesktop(),
                 ),
                 if (responsiveHelper(context) == "Desktop")
                   FooterDesktop()
