@@ -55,19 +55,14 @@ class _AboutMeState extends State<AboutMe> {
                 ),
               ),
             ),
-            Column(
-              children: [
-                /// This is the nav bar -- make separate widgets for desktop, tablet and phone.
-                if (responsiveHelper(context) == "Desktop")
-                  NavBarDesktop(
-                    currentScreen: 0,
-                  )
-                else if (responsiveHelper(context) == "Tablet")
-                  NavBarTablet()
-                else
-                  NavBarMobile(),
-              ],
-            ),
+            if (responsiveHelper(context) == "Desktop")
+              NavBarDesktop(
+                currentScreen: 0,
+              )
+            else if (responsiveHelper(context) == "Tablet")
+              NavBarTablet()
+            else
+              NavBarMobile(),
           ],
         ),
       ),
