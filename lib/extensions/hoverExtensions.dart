@@ -31,4 +31,9 @@ extension HoverExtensions on Widget {
     return HighlightOnHover(
         child: this, normal: MyColors.accentColor, highlighted: MyColors.white);
   }
+
+  Widget get aboutButton3 {
+    return HighlightOnHover(
+        child: this, normal: MyColors.white, highlighted: MyColors.black);
+  }
 }

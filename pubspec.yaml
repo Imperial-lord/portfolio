@@ -86,6 +86,9 @@ flutter:
     - family: poppins
       fonts:
         - asset: assets/fonts/poppins-semibold.ttf
+    - family: poppins-bold
+      fonts:
+        - asset: assets/fonts/poppins-bold.ttf
     - family:  PortfolioIcons
       fonts:
        - asset: assets/fonts/PortfolioIcons.ttf

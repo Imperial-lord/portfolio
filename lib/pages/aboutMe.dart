@@ -10,9 +10,10 @@ import 'package:portfolio/widgets/desktop/aboutDescDesktop.dart';
 import 'package:portfolio/widgets/desktop/aboutMeBodyDesktop.dart';
 import 'package:portfolio/widgets/desktop/footerDesktop.dart';
 import 'package:portfolio/widgets/desktop/navBarDesktop.dart';
-import 'package:portfolio/widgets/mobile/aboutMeBodyMobileTab.dart';
+import 'package:portfolio/widgets/mobile/aboutMeBodyMobile.dart';
 import 'package:portfolio/widgets/mobile/footerMobile.dart';
 import 'package:portfolio/widgets/mobile/navBarMobile.dart';
+import 'package:portfolio/widgets/tablet/aboutMeBodyTab.dart';
 import 'package:portfolio/widgets/tablet/footerTablet.dart';
 import 'package:portfolio/widgets/tablet/navBarTablet.dart';
 
@@ -38,8 +39,12 @@ class _AboutMeState extends State<AboutMe> {
                       color: MyColors.white,
                       height: MyDimens.double_125,
                     ),
-                    if(responsiveHelper(context)=="Desktop") AboutMeBodyDesktop()
-                    else AboutMeBodyMobileTab(),
+                    if (responsiveHelper(context) == "Desktop")
+                      AboutMeBodyDesktop()
+                    else if (responsiveHelper(context) == "Tablet")
+                      AboutMeBodyTab()
+                    else
+                      AboutMeBodyMobile(),
                     if (responsiveHelper(context) == "Desktop")
                       FooterDesktop()
                     else if (responsiveHelper(context) == "Tablet")

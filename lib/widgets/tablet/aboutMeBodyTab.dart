@@ -11,11 +11,11 @@ import 'package:portfolio/widgets/portfolio_icons.dart';
 import 'package:portfolio/extensions/hoverExtensions.dart';
 
 
-class AboutMeBodyMobileTab extends StatefulWidget {
-  _AboutMeBodyMobileTabState createState() => _AboutMeBodyMobileTabState();
+class AboutMeBodyTab extends StatefulWidget {
+  _AboutMeBodyTabState createState() => _AboutMeBodyTabState();
 }
 
-class _AboutMeBodyMobileTabState extends State<AboutMeBodyMobileTab> {
+class _AboutMeBodyTabState extends State<AboutMeBodyTab> {
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -25,12 +25,12 @@ class _AboutMeBodyMobileTabState extends State<AboutMeBodyMobileTab> {
             Container(
               color: MyColors.white,
               width: MediaQuery.of(context).size.width,
-              height: 0.3* MediaQuery.of(context).size.height,
+              height: 0.2* MediaQuery.of(context).size.height,
             ),
             Container(
               color: MyColors.primaryDark,
               width: MediaQuery.of(context).size.width,
-              height: 0.8* MediaQuery.of(context).size.height,
+              height: 0.5* MediaQuery.of(context).size.height,
             ),
           ],
         ),
@@ -40,10 +40,10 @@ class _AboutMeBodyMobileTabState extends State<AboutMeBodyMobileTab> {
             children: [
               Spacer(),
               Column(
-                mainAxisSize: MainAxisSize.min,
                 children: [
-                  Flexible(child: AboutCardMobileTab()),
-                  Flexible(child: AboutDescMobileTab()),
+                  AboutCardMobileTab(),
+                  MySpaces.vLargeGapInBetween,
+                  AboutDescMobileTab(),
                 ],
               ),
               Spacer(),
