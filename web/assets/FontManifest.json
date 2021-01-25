@@ -30,5 +30,13 @@
         "asset": "assets/fonts/poppins-semibold.ttf"
       }
     ]
+  },
+  {
+    "family": "poppins-bold",
+    "fonts": [
+      {
+        "asset": "assets/fonts/poppins-bold.ttf"
+      }
+    ]
   }
 ]
