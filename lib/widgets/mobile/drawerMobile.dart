@@ -7,6 +7,7 @@ import 'package:portfolio/pages/aboutMe.dart';
 import 'package:portfolio/pages/contactMe.dart';
 import 'package:portfolio/pages/projects.dart';
 import 'package:portfolio/pages/resume.dart';
+import 'package:portfolio/widgets/portfolio_icons.dart';
 
 class DrawerMobile extends StatefulWidget {
   final int currentScreen;
@@ -44,7 +45,7 @@ class _DrawerMobileState extends State<DrawerMobile> {
                     Navigator.pop(context);
                   },
                   icon: Icon(
-                    Icons.close_rounded,
+                    PortfolioIcons.cancel,
                     color: MyColors.black,
                     size: 40,
                   ),
