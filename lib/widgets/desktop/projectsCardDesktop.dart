@@ -83,7 +83,7 @@ class _ProjectsCardDesktopState extends State<ProjectsCardDesktop> {
           /// Add a Network Image to describe the project!
           Image(
             image: NetworkImage(
-                'https://i.ibb.co/SKPL8xT/i-Phone-X-XS-11-Pro-150.png'),
+                'https://i.ibb.co/hss9TJn/i-Phone-X-XS-11-Pro-150.png'),
             fit: BoxFit.cover,
             width: 300,
           ),

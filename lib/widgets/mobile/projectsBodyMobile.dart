@@ -6,20 +6,19 @@ import 'package:portfolio/globals/myColors.dart';
 import 'package:portfolio/globals/myDimens.dart';
 import 'package:portfolio/globals/mySpaces.dart';
 import 'package:portfolio/globals/myString.dart';
-import 'package:portfolio/widgets/desktop/projectsCardDesktop.dart';
+import 'package:portfolio/widgets/mobile/projectsCardMobile.dart';
 import 'package:portfolio/widgets/portfolio_icons.dart';
 import 'package:portfolio/extensions/hoverExtensions.dart';
 
-class ProjectsBodyDesktop extends StatefulWidget {
-  _ProjectsBodyDesktopState createState() => _ProjectsBodyDesktopState();
+class ProjectsBodyMobile extends StatefulWidget {
+  _ProjectsBodyMobileState createState() => _ProjectsBodyMobileState();
 }
 
-class _ProjectsBodyDesktopState extends State<ProjectsBodyDesktop> {
+class _ProjectsBodyMobileState extends State<ProjectsBodyMobile> {
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        MySpaces.vLargestGapInBetween,
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -38,17 +37,17 @@ class _ProjectsBodyDesktopState extends State<ProjectsBodyDesktop> {
             ),
           ],
         ),
-        MySpaces.vLargestGapInBetween,
+        MySpaces.vSmallGapInBetween,
         Container(
-          width: responsiveHelper(context) == 'Tablet' ? 650 : 720,
+          width: MediaQuery.of(context).size.width * 0.9,
           child: Column(
             children: [
-              ProjectsCardDesktop(),
-              MySpaces.vLargestGapInBetween,
-              ProjectsCardDesktop(),
-              MySpaces.vLargestGapInBetween,
-              ProjectsCardDesktop(),
-              MySpaces.vLargestGapInBetween,
+              ProjectsCardMobile(),
+              MySpaces.vSmallGapInBetween,
+              ProjectsCardMobile(),
+              MySpaces.vSmallGapInBetween,
+              ProjectsCardMobile(),
+              MySpaces.vSmallGapInBetween,
             ],
           ),
         ),

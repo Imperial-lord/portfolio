@@ -7,6 +7,7 @@ import 'package:portfolio/widgets/desktop/navBarDesktop.dart';
 import 'package:portfolio/widgets/desktop/projectsBodyDesktop.dart';
 import 'package:portfolio/widgets/mobile/footerMobile.dart';
 import 'package:portfolio/widgets/mobile/navBarMobile.dart';
+import 'package:portfolio/widgets/mobile/projectsBodyMobile.dart';
 import 'package:portfolio/widgets/tablet/footerTablet.dart';
 import 'package:portfolio/widgets/tablet/navBarTablet.dart';
 
@@ -32,8 +33,11 @@ class _ProjectsState extends State<Projects> {
                     Container(
                       color: MyColors.primaryDark,
                       width: MediaQuery.of(context).size.width,
-                      padding: EdgeInsets.only(top: MyDimens.double_200, bottom: MyDimens.double_60),
-                      child: ProjectsBodyDesktop(),
+                      padding: EdgeInsets.only(
+                          top: MyDimens.double_150, bottom: MyDimens.double_60),
+                      child: (responsiveHelper(context)) == "Mobile"
+                          ? ProjectsBodyMobile()
+                          : ProjectsBodyDesktop(),
                     ),
                     if (responsiveHelper(context) == "Desktop")
                       FooterDesktop()
