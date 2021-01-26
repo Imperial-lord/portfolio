@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:portfolio/globals/myColors.dart';
 import 'package:portfolio/globals/myDimens.dart';
 import 'package:portfolio/globals/mySpaces.dart';
@@ -66,9 +67,10 @@ class _NavBarTabletState extends State<NavBarTablet> {
                 onPressed: () {
                   Navigator.push(
                       context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              DrawerMobile(currentScreen: currentScreen)));
+                      PageTransition(
+                          type: PageTransitionType.fade,
+                          duration: Duration(milliseconds: 600),
+                          child: DrawerMobile(currentScreen: currentScreen)));
                 },
                 icon: Icon(
                   PortfolioIcons.bars,

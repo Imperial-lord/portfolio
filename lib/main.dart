@@ -1,10 +1,10 @@
+// @dart=2.9
 import 'package:flutter/material.dart';
 import 'package:portfolio/globals/myString.dart';
 import 'package:portfolio/pages/aboutMe.dart';
 import 'package:portfolio/pages/contactMe.dart';
 import 'package:portfolio/pages/projects.dart';
 import 'package:portfolio/pages/resume.dart';
-import 'package:portfolio/widgets/mobile/drawerMobile.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,7 +15,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: MyStrings.appName,
-      theme: ThemeData.light(),
+      theme: ThemeData.light().copyWith(
+        pageTransitionsTheme: const PageTransitionsTheme(
+          builders: <TargetPlatform, PageTransitionsBuilder>{
+            TargetPlatform.android: ZoomPageTransitionsBuilder(),
+          },
+        ),
+      ),
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {

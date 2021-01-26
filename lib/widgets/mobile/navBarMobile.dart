@@ -6,6 +6,7 @@ import 'package:portfolio/globals/mySpaces.dart';
 import 'package:portfolio/globals/myString.dart';
 import 'package:portfolio/widgets/mobile/drawerMobile.dart';
 import 'package:portfolio/widgets/portfolio_icons.dart';
+import 'package:page_transition/page_transition.dart';
 
 class NavBarMobile extends StatefulWidget {
   final int currentScreen;
@@ -63,13 +64,14 @@ class _NavBarMobileState extends State<NavBarMobile> {
             ),
             Spacer(),
             IconButton(
-              padding: EdgeInsets.all(0),
+                padding: EdgeInsets.all(0),
                 onPressed: () {
                   Navigator.push(
                       context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              DrawerMobile(currentScreen: currentScreen)));
+                      PageTransition(
+                          type: PageTransitionType.fade,
+                          duration: Duration(milliseconds: 600),
+                          child: DrawerMobile(currentScreen: currentScreen)));
                 },
                 icon: Icon(
                   PortfolioIcons.bars,
