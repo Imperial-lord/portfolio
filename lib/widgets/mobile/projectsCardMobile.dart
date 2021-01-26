@@ -65,7 +65,7 @@ class _ProjectsCardMobileState extends State<ProjectsCardMobile> {
           ),
           MySpaces.vMediumGapInBetween,
           Padding(
-            padding: const EdgeInsets.only(left: 22),
+            padding: const EdgeInsets.only(left: 22, right: 10),
             child: Text(
               MyStrings.tempDescProjects,
               style: TextStyle(
