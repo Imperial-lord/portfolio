@@ -56,9 +56,13 @@ class _ProjectsState extends State<Projects> {
                 currentScreen: 2,
               )
             else if (responsiveHelper(context) == "Tablet")
-              NavBarTablet()
+              NavBarTablet(
+                currentScreen: 2,
+              )
             else
-              NavBarMobile(),
+              NavBarMobile(
+                currentScreen: 2,
+              ),
           ],
         ),
       ),

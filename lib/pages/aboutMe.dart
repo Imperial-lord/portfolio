@@ -60,9 +60,13 @@ class _AboutMeState extends State<AboutMe> {
                 currentScreen: 0,
               )
             else if (responsiveHelper(context) == "Tablet")
-              NavBarTablet()
+              NavBarTablet(
+                currentScreen: 0,
+              )
             else
-              NavBarMobile(),
+              NavBarMobile(
+                currentScreen: 0,
+              ),
           ],
         ),
       ),

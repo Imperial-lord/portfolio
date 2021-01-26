@@ -29,9 +29,13 @@ class _ContactMeState extends State<ContactMe> {
                 if (responsiveHelper(context) == "Desktop")
                   NavBarDesktop(currentScreen: 3,)
                 else if (responsiveHelper(context) == "Tablet")
-                  NavBarTablet()
+                  NavBarTablet(
+                    currentScreen: 3,
+                  )
                 else
-                  NavBarMobile(),
+                  NavBarMobile(
+                    currentScreen: 3,
+                  ),
                 Container(
                   color: MyColors.primaryDark,
                   width: MediaQuery.of(context).size.width,

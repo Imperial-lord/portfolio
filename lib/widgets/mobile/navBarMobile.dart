@@ -4,13 +4,22 @@ import 'package:portfolio/globals/myColors.dart';
 import 'package:portfolio/globals/myDimens.dart';
 import 'package:portfolio/globals/mySpaces.dart';
 import 'package:portfolio/globals/myString.dart';
+import 'package:portfolio/widgets/mobile/drawerMobile.dart';
 import 'package:portfolio/widgets/portfolio_icons.dart';
 
 class NavBarMobile extends StatefulWidget {
-  _NavBarMobileState createState() => _NavBarMobileState();
+  final int currentScreen;
+
+  NavBarMobile({required this.currentScreen});
+
+  _NavBarMobileState createState() => _NavBarMobileState(currentScreen);
 }
 
 class _NavBarMobileState extends State<NavBarMobile> {
+  int currentScreen;
+
+  _NavBarMobileState(this.currentScreen);
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -53,7 +62,20 @@ class _NavBarMobileState extends State<NavBarMobile> {
               ],
             ),
             Spacer(),
-            Icon(PortfolioIcons.bars, color: MyColors.accentColor, size: MyDimens.double_40,),
+            IconButton(
+              padding: EdgeInsets.all(0),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              DrawerMobile(currentScreen: currentScreen)));
+                },
+                icon: Icon(
+                  PortfolioIcons.bars,
+                  color: MyColors.accentColor,
+                  size: MyDimens.double_30,
+                )),
           ],
         ),
       ),

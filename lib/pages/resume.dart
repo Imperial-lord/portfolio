@@ -55,9 +55,13 @@ class _ResumeState extends State<Resume> {
               currentScreen: 1,
             )
           else if (responsiveHelper(context) == "Tablet")
-            NavBarTablet()
+            NavBarTablet(
+              currentScreen: 1,
+            )
           else
-            NavBarMobile(),
+            NavBarMobile(
+              currentScreen: 1,
+            ),
         ]),
       ),
     );
