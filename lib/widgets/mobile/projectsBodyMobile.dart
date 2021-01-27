@@ -45,7 +45,19 @@ class _ProjectsBodyMobileState extends State<ProjectsBodyMobile> {
         Container(
           width: MediaQuery.of(context).size.width * 0.9,
           child: Column(
-            children: [for (int i = 0; i < 4; i++) _animatedProjectCards()],
+            children: [
+              Text(
+                MyStrings.tempDescProjects,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  height: 1.5,
+                  color: MyColors.black,
+                  fontFamily: 'avenir-light',
+                  fontSize: MyDimens.double_17,
+                ),
+              ),
+              MySpaces.vMediumGapInBetween,
+              for (int i = 0; i < 4; i++) _animatedProjectCards()],
           ),
         ),
       ],

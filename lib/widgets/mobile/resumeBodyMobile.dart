@@ -9,10 +9,14 @@ import 'package:portfolio/globals/myString.dart';
 import 'package:portfolio/widgets/mobile/resumeCardMobile.dart';
 import 'package:portfolio/widgets/portfolio_icons.dart';
 import 'package:portfolio/extensions/hoverExtensions.dart';
+import 'package:simple_animations/simple_animations.dart';
 
 class ResumeBodyMobile extends StatefulWidget {
   _ResumeBodyMobileState createState() => _ResumeBodyMobileState();
 }
+
+/// AniProps for animation
+enum AniProps { offset, opacity }
 
 class _ResumeBodyMobileState extends State<ResumeBodyMobile> {
   @override
@@ -83,9 +87,9 @@ class _ResumeBodyMobileState extends State<ResumeBodyMobile> {
                 ],
               ),
               MySpaces.vLargeGapInBetween,
-              ResumeCardMobile(),
+              _animatedResumeCards(),
               MySpaces.vLargeGapInBetween,
-              ResumeCardMobile(),
+              _animatedResumeCards(),
               MySpaces.vLargeGapInBetween,
               MySpaces.vLargeGapInBetween,
               Text(
@@ -96,9 +100,9 @@ class _ResumeBodyMobileState extends State<ResumeBodyMobile> {
                     fontSize: MyDimens.double_20),
               ),
               MySpaces.vLargeGapInBetween,
-              ResumeCardMobile(),
+              _animatedResumeCards(),
               MySpaces.vLargeGapInBetween,
-              ResumeCardMobile(),
+              _animatedResumeCards(),
               MySpaces.vLargeGapInBetween,
               MySpaces.vLargeGapInBetween,
               ResumeCardSkillsMobile(),
@@ -107,6 +111,29 @@ class _ResumeBodyMobileState extends State<ResumeBodyMobile> {
           ),
         )
       ],
+    );
+  }
+
+  Widget _animatedResumeCards() {
+    /// Adding animation tween
+    final _tween = MultiTween<AniProps>()
+      ..add(AniProps.opacity, Tween(begin: 0.0, end: 1.0),
+          Duration(milliseconds: 1500))
+      ..add(
+          AniProps.offset,
+          Tween(begin: Offset(0, 200), end: Offset(0, 0)),
+          Duration(milliseconds: 1500));
+    return PlayAnimation<MultiTweenValues<AniProps>>(
+      tween: _tween, // Pass in tween
+      duration: _tween.duration, // Obtain duration from MultiTween
+      curve: Curves.easeOutSine,
+      builder: (context, child, value) {
+        return Transform.translate(
+          offset: value.get(AniProps.offset), // Get animated offset
+          child:
+          Opacity(opacity: value.get(AniProps.opacity), child: ResumeCardMobile()),
+        );
+      },
     );
   }
 }

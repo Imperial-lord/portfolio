@@ -4,6 +4,7 @@ import 'package:portfolio/functions/responsiveHelper.dart';
 import 'package:portfolio/globals/myColors.dart';
 import 'package:portfolio/globals/myDimens.dart';
 import 'package:portfolio/globals/mySpaces.dart';
+import 'package:portfolio/globals/myString.dart';
 import 'package:portfolio/widgets/desktop/projectsCardDesktop.dart';
 // ignore: import_of_legacy_library_into_null_safe
 import 'package:simple_animations/simple_animations.dart';
@@ -44,6 +45,17 @@ class _ProjectsBodyDesktopState extends State<ProjectsBodyDesktop> {
           width: responsiveHelper(context) == 'Tablet' ? 650 : 720,
           child: Column(
             children: [
+              Text(
+                MyStrings.tempDescProjects,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  height: 1.5,
+                  color: MyColors.black,
+                  fontFamily: 'avenir-light',
+                  fontSize: MyDimens.double_17,
+                ),
+              ),
+              MySpaces.vLargestGapInBetween,
               for (int i = 0; i < 4; i++)
                 if (i % 2 == 0)
                   _animatedProjectCards('left')
