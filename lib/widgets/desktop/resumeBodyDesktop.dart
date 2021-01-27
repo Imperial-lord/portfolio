@@ -9,10 +9,14 @@ import 'package:portfolio/globals/myString.dart';
 import 'package:portfolio/widgets/desktop/resumeCardDesktop.dart';
 import 'package:portfolio/widgets/portfolio_icons.dart';
 import 'package:portfolio/extensions/hoverExtensions.dart';
+import 'package:simple_animations/simple_animations.dart';
 
 class ResumeBodyDesktop extends StatefulWidget {
   _ResumeBodyDesktopState createState() => _ResumeBodyDesktopState();
 }
+
+/// AniProps for animation
+enum AniProps { offset, opacity }
 
 class _ResumeBodyDesktopState extends State<ResumeBodyDesktop> {
   @override
@@ -83,10 +87,26 @@ class _ResumeBodyDesktopState extends State<ResumeBodyDesktop> {
                 ],
               ),
               MySpaces.vLargeGapInBetween,
-              ResumeCardDesktop(),
-              MySpaces.vLargeGapInBetween,
-              ResumeCardDesktop(),
-              MySpaces.vLargeGapInBetween,
+              // Experience
+              for (int i = 0; i < 2; i++)
+                if (i % 2 == 0)
+                  _animatedResumeCards(
+                      'left',
+                      Column(
+                        children: [
+                          ResumeCardDesktop(),
+                          MySpaces.vLargeGapInBetween,
+                        ],
+                      ))
+                else
+                  _animatedResumeCards(
+                      'right',
+                      Column(
+                        children: [
+                          ResumeCardDesktop(),
+                          MySpaces.vLargeGapInBetween,
+                        ],
+                      )),
               MySpaces.vLargeGapInBetween,
               Text(
                 'Education',
@@ -96,16 +116,49 @@ class _ResumeBodyDesktopState extends State<ResumeBodyDesktop> {
                     fontSize: MyDimens.double_25),
               ),
               MySpaces.vLargeGapInBetween,
+              // Education
               ResumeCardDesktop(),
               MySpaces.vLargeGapInBetween,
               ResumeCardDesktop(),
               MySpaces.vLargeGapInBetween,
+              // Skills
               MySpaces.vLargeGapInBetween,
               ResumeCardSkillsDesktop(),
               MySpaces.vLargeGapInBetween,
             ],
           ),
         )
+      ],
+    );
+  }
+
+  Widget _animatedResumeCards(String direction, Widget widget) {
+    /// Adding animation tween
+    final _tween = MultiTween<AniProps>()
+      ..add(AniProps.opacity, Tween(begin: 0.0, end: 1.0),
+          Duration(milliseconds: 1500))
+      ..add(
+          // center left => center right OR center right => center left
+          AniProps.offset,
+          (direction == 'left')
+              ? Tween(begin: Offset(200, 0), end: Offset(0, 0))
+              : Tween(begin: Offset(-200, 0), end: Offset(0, 0)),
+          Duration(milliseconds: 1500));
+    return Column(
+      children: [
+        PlayAnimation<MultiTweenValues<AniProps>>(
+          tween: _tween, // Pass in tween
+          duration: _tween.duration, // Obtain duration from MultiTween
+          curve: Curves.easeOutSine,
+          builder: (context, child, value) {
+            return Transform.translate(
+              offset: value.get(AniProps.offset), // Get animated offset
+              child:
+                  Opacity(opacity: value.get(AniProps.opacity), child: widget),
+            );
+          },
+        ),
+        MySpaces.vLargestGapInBetween,
       ],
     );
   }
